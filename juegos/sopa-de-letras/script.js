@@ -119,12 +119,10 @@ function comprobarPalabra() {
     }
 }
 
-function mostrarPopup(acertado) {
+function mostrarPopup() {
     const popup = document.getElementById("popup");
     popup.classList.add("visible")
-    if (acertado){
-        resultado.innerText = "¡Felicidades! Has adivinado la palabra.";}
-    }
+}
 
 
 

@@ -190,6 +190,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color:#4d4d4d;
 }
 
 #avances h2 {
@@ -211,6 +212,7 @@ a {
     border-radius: 10px;
     margin: 12px 0;
     padding: 10px;
+    background-color: #FDFFC1;
 } 
 
 .colores {
