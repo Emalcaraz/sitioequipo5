@@ -1,8 +1,10 @@
+
 const palabras = ["SEMAFORO", "PEATON", "CASCO", "CRUCE", "CINTURON"];
 const gridSize = 10;
 let grid;
 let encontradas = 0;
 let seleccionadas = [];
+
 
 function generarGrid() {
     grid = Array.from({ length: gridSize }, () => Array(gridSize).fill(''));
@@ -88,6 +90,8 @@ function comprobarPalabra() {
     });
 
     let palabrasEncontradas = 0;
+    const palabrasEncontradasList = document.getElementById('lista-encontradas');
+    
     palabras.forEach(palabra => {
         let palabraEncontrada = true;
         for (let i = 0; i < palabra.length; i++) {
@@ -103,25 +107,32 @@ function comprobarPalabra() {
             });
             palabrasEncontradas++;
             seleccionadas = [];
+            encontradas++;
+            palabrasEncontradasList.innerHTML += `<li>${palabra}</li>`;
         }
     });
 
     if (palabrasEncontradas === palabras.length) {
         mostrarMensaje("¡Felicidades! Has encontrado todas las palabras.");
-        setTimeout(reiniciarJuego, 2000);
+        mostrarPopup();
+        setTimeout(reiniciarJuego, 2000); // Reinicia el juego después de mostrar el popup
     }
 }
 
-function mostrarMensaje(mensaje) {
-    const mensajeElement = document.createElement('div');
-    mensajeElement.classList.add('mensaje');
-    mensajeElement.textContent = mensaje;
-    document.getElementById('mensaje-container').appendChild(mensajeElement);
 
-    // Ocultar el mensaje después de unos segundos
-    setTimeout(() => {
-        mensajeElement.remove();
-    }, 1500);
+
+function mostrarPopup(acertado) {
+    const popup = document.getElementById("popup");
+    popup.classList.add("visible")
+    if (acertado){
+        resultado.innerText = "¡Felicidades! Has adivinado la palabra.";}
+    }
+
+
+
+function ocultarPopup() {
+    const popup = document.getElementById('popup');
+    popup.classList.remove("visible")
 }
 
 function reiniciarJuego() {

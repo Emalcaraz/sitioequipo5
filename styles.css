@@ -204,13 +204,32 @@ a {
 #presentacion,
 #publico-objetivo,
 #identidad-visual,
-#enlaces {
+#enlaces
+{
     width: 90%;
     box-shadow: 0 0 2px;
     border-radius: 10px;
     margin: 12px 0;
     padding: 10px;
+} 
+
+.colores {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
 }
+
+.color {
+    width: 90px;
+    height: 90px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    font-weight: bold;
+}
+
 
 #logo_web {
     display: flex;
