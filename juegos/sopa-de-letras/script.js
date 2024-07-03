@@ -119,8 +119,6 @@ function comprobarPalabra() {
     }
 }
 
-
-
 function mostrarPopup(acertado) {
     const popup = document.getElementById("popup");
     popup.classList.add("visible")
